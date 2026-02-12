@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Be My Valentine? ❤️</title>
     <link rel="icon" type="image/png" href="https://img.icons8.com/plasticine/100/like--v1.png" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
@@ -22,19 +23,19 @@
             <input type="text" name="status" value="She said YES! ❤️">
         </form>
 
-        <img src="https://i.postimg.cc/PqRTF77b/IMG_20250823_WA0069.jpg" class="random-pic p1">
         <img src="https://i.postimg.cc/hPYFnmrb/IMG_20250711_WA0306_(1).jpg" class="random-pic p2">
         <img src="https://i.postimg.cc/WbyRVZ8P/20251005_154756.jpg" class="random-pic p3">
         <img src="https://i.postimg.cc/8C5T4GZp/20250711_140717.jpg" class="random-pic p4">
         <img src="https://i.postimg.cc/KjXFmMFW/IMG_20250711_WA0316.jpg" class="random-pic p5">
-        <img src="https://i.postimg.cc/8PSD3MZJ/javav8srp_20251005_155129157.jpg" class="random-pic p6">
 
         <div class="container">
             <h1 class="question">Will you be my Valentine? <span class="title-heart">❤️</span></h1>
+            
             <div class="buttons">
-                <button id="yesBtn" onclick="showLove()">Yes</button>
+                <button id="yesBtn" type="button" onclick="showLove()">Yes</button>
+                
                 <div id="no-container">
-                    <button id="noBtn" onmouseover="dodgeOnly()" onclick="growYesAndThinkAgain()">No</button>
+                    <button id="noBtn" type="button" onclick="growYesAndThinkAgain()">No</button>
                     <span id="thinkAgain">Think Again! 😉</span>
                 </div>
             </div>
