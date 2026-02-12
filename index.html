@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div id="customModal" class="modal">
+            <div class="modal-content">
+                <h2 class="valentine-text">I love you my wifey 😘💗</h2>
+                <button class="close-btn" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+
+        <img src="https://i.postimg.cc/PqRTF77b/IMG_20250823_WA0069.jpg" class="random-pic p1">
+        <img src="https://i.postimg.cc/hPYFnmrb/IMG_20250711_WA0306_(1).jpg" class="random-pic p2">
+        <img src="https://i.postimg.cc/WbyRVZ8P/20251005_154756.jpg" class="random-pic p3">
+        <img src="https://i.postimg.cc/8C5T4GZp/20250711_140717.jpg" class="random-pic p4">
+        <img src="https://i.postimg.cc/KjXFmMFW/IMG_20250711_WA0316.jpg" class="random-pic p5">
+        <img src="https://i.postimg.cc/8PSD3MZJ/javav8srp_20251005_155129157.jpg" class="random-pic p6">
+
+        <div class="container">
+            <h1 class="question">Will you be my Valentine?</h1>
+            <div class="buttons">
+                <button id="yesBtn" onclick="showLove()">Yes</button>
+                
+                <div id="no-container">
+                    <button id="noBtn" onmouseover="dodgeOnly()" onclick="growYesAndThinkAgain()">No</button>
+                    <span id="thinkAgain">Think Again! 😉</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rose-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

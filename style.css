@@ -1,0 +1,141 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* --- MAIN WRAPPER --- */
+.main-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(255, 192, 203, 0.3), rgba(255, 182, 193, 0.3)), 
+                url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- PHOTO STYLING (FIXED IMAGE VISIBILITY) --- */
+.random-pic {
+    position: absolute; 
+    width: 150px; 
+    height: 150px;
+    object-fit: cover;
+    z-index: 5;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* The Fix: Rounding the image and border perfectly */
+    border-radius: 30px; 
+    border: 6px solid transparent;
+    /* This creates the colorful border effect without hiding the image */
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #ff0a54, #ff7096, #ffb3c1, #ff0a54) border-box;
+    
+    /* Soft Glow */
+    box-shadow: 0 10px 25px rgba(255, 10, 84, 0.3);
+}
+
+.random-pic:hover {
+    transform: scale(1.2) rotate(0deg) !important;
+    box-shadow: 0 15px 35px rgba(255, 10, 84, 0.6);
+    z-index: 200;
+}
+
+/* Positions for the 6 images */
+.p1 { top: 8%; left: 10%; transform: rotate(-8deg); }
+.p2 { top: 12%; right: 10%; transform: rotate(12deg); }
+.p3 { bottom: 12%; left: 12%; transform: rotate(5deg); }
+.p4 { bottom: 8%; right: 15%; transform: rotate(-12deg); }
+.p5 { top: 42%; left: 4%; transform: rotate(6deg); }
+.p6 { top: 42%; right: 4%; transform: rotate(-6deg); }
+
+/* --- CENTER CONTAINER --- */
+.container {
+    text-align: center;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 2px solid #ffb3c1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    font-family: 'Pacifico', cursive;
+    color: #c9184a;
+    font-size: 3.2rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+#no-container { position: relative; display: inline-block; }
+
+#thinkAgain {
+    position: absolute; top: -45px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Dancing Script', cursive;
+    color: #c9184a; font-size: 1.6rem;
+    white-space: nowrap; opacity: 0; transition: opacity 0.3s;
+}
+
+/* --- 3D PILL BUTTONS --- */
+button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.6rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 10px 20px rgba(201, 24, 74, 0.3), 
+        inset 0 -5px 10px rgba(0, 0, 0, 0.2), 
+        inset 0 5px 10px rgba(255, 255, 255, 0.4);
+}
+
+button:active {
+    transform: translateY(4px) scale(0.95);
+    box-shadow: 0 5px 10px rgba(201, 24, 74, 0.3);
+}
+
+/* --- MODAL POP-UP --- */
+.modal {
+    display: none; position: fixed; z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center; align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 60px; border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    border: 3px solid #ff4d6d;
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.valentine-text { font-family: 'Dancing Script', cursive; font-size: 3rem; color: #ff4d6d; }
+
+@keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+
+/* --- FALLING ROSES --- */
+.rose {
+    position: absolute; top: -50px; font-size: 35px;
+    pointer-events: none; animation: fall linear forwards;
+}
+
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
